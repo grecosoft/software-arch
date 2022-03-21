@@ -1,4 +1,5 @@
-﻿using NetFusion.Bootstrap.Plugins;
+﻿using Examples.Probes.WebApi.Models;
+using NetFusion.Bootstrap.Plugins;
 
 namespace Examples.Probes.WebApi.Plugin
 {
@@ -13,6 +14,8 @@ namespace Examples.Probes.WebApi.Plugin
         
         public WebApiPlugin()
         {
+            AddModule<HealthCheckModule>();
+            
             Description = "WebApi host exposing REST/HAL based Web API.";
         }
     }
