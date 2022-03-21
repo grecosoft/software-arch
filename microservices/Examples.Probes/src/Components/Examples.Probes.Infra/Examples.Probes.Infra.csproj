@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Examples.Probes.Domain\Examples.Probes.Domain.csproj" />
+    <ProjectReference Include="..\Examples.Probes.App\Examples.Probes.App.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.ValueTuple" Version="4.5.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NetFusion.Common" Version="6.0.19" />
+    <PackageReference Include="NetFusion.Base" Version="6.0.19" />
+    <PackageReference Include="NetFusion.Bootstrap" Version="6.0.19" />
+    <PackageReference Include="NetFusion.Settings" Version="6.0.19" />
+    <PackageReference Include="NetFusion.Messaging" Version="6.0.19" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="System.ValueTuple" Version="4.5.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="6.0.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Components\Examples.Probes.App\Examples.Probes.App.csproj" />
+    <ProjectReference Include="..\Components\Examples.Probes.Infra\Examples.Probes.Infra.csproj" />
+    <ProjectReference Include="..\Components\Examples.Probes.Domain\Examples.Probes.Domain.csproj" />
+    <ProjectReference Include="..\Examples.Probes.WebApi\Examples.Probes.WebApi.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NetFusion.Common" Version="6.0.19" />
+    <PackageReference Include="NetFusion.Base" Version="6.0.19" />
+    <PackageReference Include="NetFusion.Bootstrap" Version="6.0.19" />
+    <PackageReference Include="NetFusion.Settings" Version="6.0.19" />
+    <PackageReference Include="NetFusion.Test" Version="6.0.19" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3" />
+  </ItemGroup>
+</Project>
