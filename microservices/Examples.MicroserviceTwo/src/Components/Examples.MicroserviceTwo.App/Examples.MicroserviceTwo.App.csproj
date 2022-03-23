@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Examples.MicroserviceTwo.Domain\Examples.MicroserviceTwo.Domain.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NetFusion.Common" Version="6.0.19" />
+    <PackageReference Include="NetFusion.Base" Version="6.0.19" />
+    <PackageReference Include="NetFusion.Bootstrap" Version="6.0.19" />
+    <PackageReference Include="NetFusion.RabbitMQ" Version="6.0.19" />
+    <PackageReference Include="NetFusion.Settings" Version="6.0.19" />
+    <PackageReference Include="NetFusion.Messaging" Version="6.0.19" />
+  </ItemGroup>
+</Project>

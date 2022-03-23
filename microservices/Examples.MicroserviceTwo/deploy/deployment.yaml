@@ -1,0 +1,99 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: examples-microservicetwo
+  namespace: examples
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      microservice: examples-microservicetwo
+  template:
+    metadata:
+      labels:
+        microservice: examples-microservicetwo
+    spec:
+      containers:
+      - image: k3d-kube-examples-registry:5050/examples-microservicetwo:latest
+        name: examples-microservicetwo
+        env:
+        - name: ASPNETCORE_URLS
+          value: http://*:6251
+        - name: ASPNETCORE_ENVIRONMENT
+          value: DEVELOPMENT
+        ports:
+        - containerPort: 6251
+          protocol: TCP
+
+        startupProbe:
+          host:
+          httpGet:
+            path: /mgt/startup-check
+            port: 6251
+          initialDelaySeconds: 2
+          periodSeconds: 5
+          successThreshold: 1
+          failureThreshold: 10
+        
+        readinessProbe:
+          host:
+          httpGet:
+            path: /mgt/ready-check
+            port: 6251
+          initialDelaySeconds: 2
+          periodSeconds: 20
+          successThreshold: 1
+          failureThreshold: 1
+        
+        livenessProbe:
+          host:
+          httpGet:
+            path: /mgt/health-check
+            port: 6251
+          initialDelaySeconds: 2
+          periodSeconds: 10
+
+        volumeMounts:
+        - name: config
+          mountPath: /etc/microservice/configs
+        - name: config-secrets
+          mountPath: /etc/microservice/secrets
+      volumes:
+      - name: config
+        configMap:
+          name: examples-microservicetwo.settings
+      - name: config-secrets
+        secret:
+          secretName: examples-microservicetwo.secrets
+--- 
+apiVersion: v1
+kind: Service
+metadata:
+  name: examples-microservicetwo
+  namespace: examples
+spec:
+  ports:
+  - port: 80
+    targetPort: 6251
+  selector:
+    microservice: examples-microservicetwo
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: examples-microservicetwo
+  namespace: examples
+  annotations:
+    ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  rules:
+  - host: examples-microservicetwo.io
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: examples-microservicetwo
+            port:
+              number: 80
