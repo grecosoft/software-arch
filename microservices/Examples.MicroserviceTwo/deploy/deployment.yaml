@@ -73,7 +73,7 @@ metadata:
   namespace: examples
 spec:
   ports:
-  - port: 80
+  - port: 6251
     targetPort: 6251
   selector:
     microservice: examples-microservicetwo
@@ -96,4 +96,4 @@ spec:
           service:
             name: examples-microservicetwo
             port:
-              number: 80
+              number: 6251
