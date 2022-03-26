@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Examples.MicroserviceOne.Domain.Entities;
 using NetFusion.Messaging.Types;
@@ -6,6 +7,7 @@ namespace Examples.MicroserviceOne.Domain.Commands;
 
 public class VehicleInquiryCommand : Command
 {
+    public Guid InquiryId { get; set; }
     public string Make { get; set; }
     public string Model { get; set; }
     public int Year { get; set; }
@@ -13,6 +15,7 @@ public class VehicleInquiryCommand : Command
 
 public class VehicleReport : Message
 {
+    public Guid InquiryId { get; set; }
     public bool HasReportedDamage { get; set; }
     public decimal SuggestedValue { get; set; }
     public int LastReportedMileage { get; set; }

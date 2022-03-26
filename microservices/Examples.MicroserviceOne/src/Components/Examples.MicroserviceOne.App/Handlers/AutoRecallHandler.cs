@@ -29,7 +29,8 @@ public class VehicleInquiryHandler : IMessageConsumer
 
         return new VehicleReport
         {
-           Recalls = recalls
+            InquiryId = inquiry.InquiryId,
+            Recalls = recalls
         };
     }
 }

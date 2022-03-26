@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using Examples.MicroserviceTwo.App.Repositories;
 using Examples.MicroserviceTwo.Domain.Entities;
@@ -21,9 +22,9 @@ public class VehicleInspectionRepository : IVehicleInspectionRepository
         return inspection.Id;
     }
 
-    public async Task<VehicleInspection> Find(string id)
+    public async Task<VehicleInspection> GetByInquiry(Guid inquiryId)
     {
-        var result = await InspectionColl.FindAsync(f => f.Id == id);
+        var result = await InspectionColl.FindAsync(f => f.InquiryId == inquiryId);
         var inspection = await result.FirstOrDefaultAsync();
 
         if (inspection == null)
