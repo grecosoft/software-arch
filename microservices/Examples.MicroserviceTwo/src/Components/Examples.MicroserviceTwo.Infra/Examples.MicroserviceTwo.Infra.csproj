@@ -8,15 +8,15 @@
     <ProjectReference Include="..\Examples.MicroserviceTwo.App\Examples.MicroserviceTwo.App.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="NetFusion.MongoDB" Version="6.0.19" />
-    <PackageReference Include="NetFusion.RabbitMQ" Version="6.0.19" />
+    <PackageReference Include="NetFusion.MongoDB" Version="6.0.21" />
+    <PackageReference Include="NetFusion.RabbitMQ" Version="6.0.21" />
     <PackageReference Include="System.ValueTuple" Version="4.5.0" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="NetFusion.Common" Version="6.0.19" />
-    <PackageReference Include="NetFusion.Base" Version="6.0.19" />
-    <PackageReference Include="NetFusion.Bootstrap" Version="6.0.19" />
-    <PackageReference Include="NetFusion.Settings" Version="6.0.19" />
-    <PackageReference Include="NetFusion.Messaging" Version="6.0.19" />
+    <PackageReference Include="NetFusion.Common" Version="6.0.21" />
+    <PackageReference Include="NetFusion.Base" Version="6.0.21" />
+    <PackageReference Include="NetFusion.Bootstrap" Version="6.0.21" />
+    <PackageReference Include="NetFusion.Settings" Version="6.0.21" />
+    <PackageReference Include="NetFusion.Messaging" Version="6.0.21" />
   </ItemGroup>
 </Project>

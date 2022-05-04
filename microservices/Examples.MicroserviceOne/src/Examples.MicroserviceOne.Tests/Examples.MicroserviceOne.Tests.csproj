@@ -7,7 +7,7 @@
   <ItemGroup>
     <PackageReference Include="System.ValueTuple" Version="4.5.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
-    <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="6.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="6.0.4" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Components\Examples.MicroserviceOne.App\Examples.MicroserviceOne.App.csproj" />
@@ -16,11 +16,11 @@
     <ProjectReference Include="..\Examples.MicroserviceOne.WebApi\Examples.MicroserviceOne.WebApi.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="NetFusion.Common" Version="6.0.19" />
-    <PackageReference Include="NetFusion.Base" Version="6.0.19" />
-    <PackageReference Include="NetFusion.Bootstrap" Version="6.0.19" />
-    <PackageReference Include="NetFusion.Settings" Version="6.0.19" />
-    <PackageReference Include="NetFusion.Test" Version="6.0.19" />
+    <PackageReference Include="NetFusion.Common" Version="6.0.21" />
+    <PackageReference Include="NetFusion.Base" Version="6.0.21" />
+    <PackageReference Include="NetFusion.Bootstrap" Version="6.0.21" />
+    <PackageReference Include="NetFusion.Settings" Version="6.0.21" />
+    <PackageReference Include="NetFusion.Test" Version="6.0.21" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="xunit" Version="2.4.1" />
